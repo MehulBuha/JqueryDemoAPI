@@ -18,10 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Images\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\Images\017df5e7-cd99-4c6b-ad54-ffbbc0d435d0.PNG" />
     <None Include="wwwroot\Images\0a93da5b-2ed7-4037-b33d-12bb5e544df6.png" />
     <None Include="wwwroot\Images\14a2d49e-6722-492e-ba1b-419ec445fbdf.jfif" />

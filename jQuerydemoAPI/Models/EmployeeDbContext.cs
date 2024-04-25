@@ -21,8 +21,7 @@ namespace jQuerydemoAPI.Models
         }
         public async Task<bool> InsertEmployeeAsync(Employee employee)
         {
-            try
-            {
+            
                 await Database.ExecuteSqlInterpolatedAsync($@"EXEC InsertEmployee 
                     @Name={employee.Name}, 
                     @Gender={employee.Gender}, 
@@ -32,16 +31,10 @@ namespace jQuerydemoAPI.Models
                     @Address={employee.Address}, 
                     @Occupation={employee.Occupation}, 
                     @DateOfBirth={employee.DateOfBirth}, 
-                    @CreationDate={DateTime.UtcNow}, 
-                    @Images={employee.Images}, 
-                    @IsDeleted=false");
+                    @Images={employee.Images}
+                   ");
                 return true;
-            }
-            catch (Exception ex)
-            {
-               
-                return false;
-            }
+           
         }
 
         public async Task<Employee> GetEmployeeByIdAsync(int id)
@@ -54,8 +47,7 @@ namespace jQuerydemoAPI.Models
 
         public async Task<bool> UpdateEmployeeAsync(Employee employee)
         {
-            try
-            {
+            
                 await Database.ExecuteSqlInterpolatedAsync($@"EXEC UpdateEmployee 
                     @Id={employee.Id}, 
                     @Name={employee.Name}, 
@@ -66,33 +58,24 @@ namespace jQuerydemoAPI.Models
                     @Address={employee.Address}, 
                     @Occupation={employee.Occupation}, 
                     @DateOfBirth={employee.DateOfBirth}, 
-                    @Images={employee.Images}, 
-                    @IsDeleted=false");
+                    @Images={employee.Images}
+                   ");
                 return true;
-            }
-            catch (Exception ex)
-            {
-                
-                return false;
-            }
+          
         }
 
         public async Task<bool> DeleteEmployeeAsync(int id)
         {
-            try
-            {
+           
+            
                 await Database.ExecuteSqlInterpolatedAsync($"EXEC DeleteEmployee @Id={id}");
                 return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
+            
+            
         }
         public async Task<bool> ValidateLogin(string email, string password)
         {
-            try
-            {
+            
                 SqlParameter[] parameters =
                 {
                     new SqlParameter("@Email", SqlDbType.VarChar, 255) { Value = email },
@@ -104,11 +87,8 @@ namespace jQuerydemoAPI.Models
 
                 int isAuthenticated = (int)parameters[2].Value;
                 return isAuthenticated == 1;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
+            
+          
         }
 
 

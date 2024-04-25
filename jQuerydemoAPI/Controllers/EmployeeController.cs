@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace jQuerydemoAPI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("[controller]")]
     public class EmployeeController : Controller

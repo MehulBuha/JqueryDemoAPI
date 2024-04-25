@@ -51,9 +51,9 @@ namespace jQuerydemoAPI.Controllers
                     return BadRequest("Invalid email or password");
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                return StatusCode(500);
+                return StatusCode(500, $"An error occurred while processing the login request: {ex.Message}"); 
             }
         }
     }

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\jQuerydemoAPI",
+    "\\jQuerydemoAPI\\Controllers"
   ],
-  "SelectedNode": "\\D:\\jquerydemoapiclone",
+  "SelectedNode": "\\jQuerydemoAPI\\Controllers\\EmployeeController.cs",
   "PreviewInSolutionExplorer": false
 }
